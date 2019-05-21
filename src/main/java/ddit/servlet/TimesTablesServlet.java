@@ -8,8 +8,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class TimesTablesServlet extends HttpServlet {
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+public class TimesTablesServlet extends HttpServlet {
+	
+	// 
+	private Logger logger = LoggerFactory.getLogger(TimesTablesServlet.class);
+	// 
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
@@ -17,7 +24,12 @@ public class TimesTablesServlet extends HttpServlet {
 		
 		// http://localhost/jsp/timesTablesServlet?param=6
 		String param = req.getParameter("i");
+		// trace / debug / info / warn / error
+		logger.debug("param : {}", param);
+		
 		String param2 = req.getParameter("j");
+		logger.debug("param2 {} ", param2);
+		
 		int b = Integer.parseInt(param);
 		int f = Integer.parseInt(param2);
 		
