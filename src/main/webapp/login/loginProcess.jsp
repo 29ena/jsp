@@ -19,17 +19,16 @@
 			for(String userId : userIds){%>
 				<%= userId %><br>
 			<%} %>
-		
 	request.getParameter("password") : <%= request.getParameter("password") %> <br>
-	<%-- --%>
+	
 	<h2>request객체의 getParameterMap</h2>
 	<%Map<String,String[]> parameterMap = request.getParameterMap(); 
 		//parameter : userId, password
 		String[] userIdsFromMap = parameterMap.get("userId");
 		String[] passwords = parameterMap.get("password");
 		
-		for(String UserId : userIdsFromMap) { %>
-			userIdsFromMap : <%=userIds %><br>
+		for(String userId : userIdsFromMap) { %>
+			userIdsFromMap : <%=userId %><br>
 		<%} %>
 		
 		<% for(String password : passwords) { %>
