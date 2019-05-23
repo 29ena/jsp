@@ -9,13 +9,10 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
-  <!-- 초기화 파라미터 -->
   <context-param>
-  	<param-name>ADMIN</param-name>
-  	<param-value>brown</param-value>	
+    <param-name>ADMIN</param-name>
+    <param-value>brown</param-value>
   </context-param>
-  
   <servlet>
     <servlet-name>basicServlet</servlet-name>
     <servlet-class>ddit.servlet.BasicServlet</servlet-class>
@@ -49,5 +46,35 @@
   <servlet-mapping>
     <servlet-name>LoginController</servlet-name>
     <url-pattern>/LoginController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SumCalculation</display-name>
+    <servlet-name>SumCalculation</servlet-name>
+    <servlet-class>kr.or.ddit.sumCalculation.SumCalculation</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SumCalculation</servlet-name>
+    <url-pattern>/SumCalculation</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MulCalculation</display-name>
+    <servlet-name>MulCalculation</servlet-name>
+    <servlet-class>kr.or.ddit.mulCalculation.MulCalculation</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MulCalculation</servlet-name>
+    <url-pattern>/MulCalculation</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserController</display-name>
+    <servlet-name>UserController</servlet-name>
+    <servlet-class>kr.or.ddit.user.controller.UserController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserController</servlet-name>
+    <url-pattern>/UserController</url-pattern>
   </servlet-mapping>
 </web-app>
