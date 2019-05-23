@@ -30,10 +30,7 @@
 		</tr>
 	<%} %>
 </table>
-<table>
-<tr>
-</tr>
-</table>
+
 
 </body>
 </html>
