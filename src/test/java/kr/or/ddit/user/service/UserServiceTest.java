@@ -3,9 +3,12 @@ package kr.or.ddit.user.service;
 import static org.junit.Assert.*;
 
 import java.util.List;
+import java.util.Map;
 
+import kr.or.ddit.paging.model.PageVo;
 import kr.or.ddit.user.model.UserVo;
 
+import org.apache.ibatis.annotations.ResultMap;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -98,5 +101,42 @@ public class UserServiceTest {
 		assertNotNull(userVo);
 		logger.debug("getUser : {}", userVo  );
 	}
+	
+	/**
+	 * 
+	* Method : userPagingListTest
+	* 작성자 : PC20
+	* 변경이력 :
+	* Method 설명 : 사용자 페이징 리스트 조회 테스트
+	 */
+	@Test
+	public void userPagingListTest(){
+		
+		/***Given***/
+		PageVo pageVo = new PageVo(1, 10);
 
+		/***When***/
+		Map<String, Object> resultMap = userService.userPagingList(pageVo);
+		List<UserVo> userList = (List<UserVo>) resultMap.get("userList");
+		int paginationSize = (Integer)resultMap.get("paginationSize");
+		/***Then***/
+		// pagingList assert
+		assertNotNull(userList);
+		assertEquals(10, userList.size());
+		
+		// usersCnt assert
+		assertEquals(11, paginationSize);
+	}
+	
+	@Test
+	public void ceilTest(){
+		/***Given***/
+		int usersCnt = 105;
+		int pageSize = 10;
+		/***When***/
+		double paginationSize =  Math.ceil((double)usersCnt/pageSize);
+		logger.debug("paginationSize : {}", paginationSize);
+		/***Then***/
+		
+	}
 }
