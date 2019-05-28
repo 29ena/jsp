@@ -103,9 +103,9 @@ public class LoginController extends HttpServlet {
 			Cookie rememberMeCookie = new Cookie("rememberme","true");
 			rememberMeCookie.setMaxAge(cookieMaxAge);
 			
-			response.addCookie(userIdCookie);
-			response.addCookie(rememberMeCookie);
-		
+			response.addCookie(userIdCookie);	// 조회 안된다.
+			response.addCookie(rememberMeCookie);	// response에 cookie를 담아준다.
+					
 			
 			// session에 사용자 정보를 넣어준다 ( 사용빈도가 높기때문에)
 			HttpSession session = request.getSession();
