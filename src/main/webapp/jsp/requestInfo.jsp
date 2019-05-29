@@ -20,14 +20,14 @@
 		request.getLocalAddr() : <%=request.getLocalAddr() %> <br>
 		<!-- 서버 / 클라의 ip. 지금은 둘이 같아서 같은 값이 뜬다. -->
 		request.getContentType() : <%=request.getContentType() %> <br>
-		request.getContextPath() : <%=request.getContextPath() %> <br> <!-- * -->
+		request.getContextPath() : ${pageContext.request.contextPath} <br> <!-- * -->
 		<!-- 요청을 보낸 웹 어플리케이션의 이름. 첫 /jsp부분 -->
 		request.getMethod() : <%=request.getMethod() %> <br>
 		request.getRequestURI() : <%=request.getRequestURI() %> <br> <!-- * -->
 		<!-- 사용자가 어떤 url로 요청을 보냈는지 확인하는 부분 -->
 		request.getProtocol() : <%= request.getProtocol() %> <br>
 		
-		<img src="<%=request.getContextPath() %>/img/sally.png">
+		<img src="${pageContext.request.contextPath}/img/sally.png">
 		<br>
 		
 		<%-- 파라미터 받기 --%>

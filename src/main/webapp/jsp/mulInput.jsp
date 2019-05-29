@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="<%=request.getContextPath() %>/mulCalculation" method="post">
+	<form action="${pageContext.request.contextPath}/mulCalculation" method="post">
 		start : <input type="text" name="start"> <br>
 		end : <input type="text" name="end"> <br>
 		<button>전송하기</button>

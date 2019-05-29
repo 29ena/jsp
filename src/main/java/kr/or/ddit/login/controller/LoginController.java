@@ -58,7 +58,8 @@ public class LoginController extends HttpServlet {
 		// dispatch 방식으로 위임
 		
 		// session에 사용자 정보가 있을 경우 --> main화면으로 이동
-		HttpSession session = request.getSession();
+		HttpSession session = request.getSession()
+				;
 		if(session.getAttribute("USER_INFO")!=null){
 			request.getRequestDispatcher("/main.jsp").forward(request, response);
 		}
