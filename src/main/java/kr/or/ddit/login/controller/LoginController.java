@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import kr.or.ddit.user.model.UserVo;
+import kr.or.ddit.user.service.IuserService;
+import kr.or.ddit.user.service.UserService;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -40,17 +42,23 @@ public class LoginController extends HttpServlet {
 			.getLogger(LoginController.class);
 
 	private static final long serialVersionUID = 1L;
-
+	IuserService service;
+	
+	@Override
+	public void init() throws ServletException {
+		service = new UserService();
+	}
+	
 	// 사용자 로그인 화면 요청 처리
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		logger.debug("LoginController doGet()"); // 정상적으로 이 메서드가 실행되는지 까지 확인하는
 													// 부분
 		
-		
-		
-		for(Cookie cookie : request.getCookies()){
-			logger.debug("cookie : {}, {}", cookie.getName(), cookie.getValue());
+		if(request.getCookies() != null){
+			for(Cookie cookie : request.getCookies()){
+				logger.debug("cookie : {}, {}", cookie.getName(), cookie.getValue());
+			}
 		}
 		// login 화면을 처리해줄 누군가??에게 위임
 		// 단순 login화면을 html로 응답을 생성해주는 작업이 필요
@@ -88,9 +96,10 @@ public class LoginController extends HttpServlet {
 
 		// 해당 사용자 정보를 이용하여 사용자가 보낸 userId, password가 일치하는지 검사
 		// --> userId : brown이고 password : brown1234라는 값일 때 통과, 그 이외 값은 불일치
-
+		
 		// 일치하면 (로그인 성공) : main 화면으로 이동
-		if (userId.equals("brown") && password.equals("brown1234")) {
+		UserVo userVo = service.getUser(userId);
+		if (userVo != null && password.equals(userVo.getPass())) {
 			
 			// rememberme 파라미터가 존재할 경우 userId, rememberme cookie 설정해준다.
 			// rememberme 파라미터가 존재하지 않을 경우 userId, rememberme cookie 삭제한다.
@@ -111,7 +120,7 @@ public class LoginController extends HttpServlet {
 			// session에 사용자 정보를 넣어준다 ( 사용빈도가 높기때문에)
 			HttpSession session = request.getSession();
 			
-			session.setAttribute("USER_INFO", new UserVo("브라운", "brown", "곰"));	// 세션 이름은 보통 대문자를 사용한다.
+			session.setAttribute("USER_INFO", new UserVo("브라운", "brown", "곰", password));	// 세션 이름은 보통 대문자를 사용한다.
 			
 			
 			RequestDispatcher rd = request.getRequestDispatcher("/main.jsp");
