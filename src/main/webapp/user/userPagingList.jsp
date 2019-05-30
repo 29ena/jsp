@@ -15,13 +15,38 @@
 <meta name="author" content="">
 <link rel="icon" href="../../favicon.ico">
 
-<title>사용자리스트</title>
+<title>사용자페이징리스트</title>
 <!-- css, js -->
 <%@include file="/common/basicLib.jsp" %>
+
+<style>
+	.userTr:hover{
+		cursor:pointer;
+	}
+</style>
+<script>
+	$(document).ready(function(){
+		$(".userTr").on("click",function(){
+			
+			console.log("userTr click");
+			// userId를 획득하는 방법
+			//$(this).find("userId").text();
+			//$(this).data("userid");
+			
+			// 사용자 아이디를 #userId 값으로 설정해주고
+			
+		
+		var userId = $(this).find(".userId").text();
+		$("#userId").val(userId);
+		
+		// #frm을 이용하여 submit();
+		$("#frm").submit();
+	});
+});
+</script>
 </head>
 
 <body>
-
 	<!-- header -->
 	<%@include file="/common/header.jsp" %>	
 	
@@ -35,6 +60,10 @@
              <div class="row">
 				<div class="col-sm-8 blog-main">
 					<h2 class="sub-header">사용자</h2>
+					<!-- 사용자 상세조회 : userId가 필요 -->
+					<form id="frm" action="${pageContext.request.contextPath }/user" method="get">
+						<input type="hidden" id="userId" name="userId"/>
+					</form>
 					<div class="table-responsive">
 						<table class="table table-striped">
 							<tr>
@@ -45,8 +74,8 @@
 							</tr>
 							<!-- 향상된 for -->
 							<c:forEach items="${userList }" var="user" varStatus="status">
-								<tr>
-									<td>${status.index}/${status.count } / ${user.userId }</td>
+								<tr class ="userTr" data-userid="${user.userId }">
+									<td class="userId">${user.userId }</td>
 									<td>${user.name }</td>
 									<td>${user.alias }</td>
 									<td></td>
@@ -71,9 +100,9 @@
 										</li>
 									</c:when>
 									<c:otherwise>
-									<li>
-										<a href="${pageContext.request.contextPath}/userPagingList?page=${pageVo.page -1 }&pageSize=${pageVo.pageSize}" >«</a>
-									</li>
+										<li>
+											<a href="${pageContext.request.contextPath}/userPagingList?page=${pageVo.page -1 }&pageSize=${pageVo.pageSize}" >«</a>
+										</li>
 									</c:otherwise>
 								</c:choose>
 								<c:forEach begin="1" end= "${paginationSize }" var="i">
@@ -84,23 +113,23 @@
 								  			</li>
 										</c:when>
 										<c:otherwise>
-										<li>
-										<a href="${pageContext.request.contextPath}/userPagingList?page=${i }&pageSize=${pageVo.pageSize}">${i }</a>
-										</li>
+											<li>
+											<a href="${pageContext.request.contextPath}/userPagingList?page=${i }&pageSize=${pageVo.pageSize}">${i }</a>
+											</li>
 										</c:otherwise>
 									</c:choose>
 								</c:forEach>
 							
 								<c:choose>
 									<c:when test="${pageVo.page == paginationSize }">
-									<li class="disabled">
-										<span>»</span>
-									</li>
+										<li class="disabled">
+											<span>»</span>
+										</li>
 									</c:when>
 									<c:otherwise>
-									<li>
-										<a href="${pageContext.request.contextPath}/userPagingList?page=${pageVo.page +1 }&pageSize=${pageVo.pageSize}">»</a>
-									</li>
+										<li>
+											<a href="${pageContext.request.contextPath}/userPagingList?page=${pageVo.page +1 }&pageSize=${pageVo.pageSize}">»</a>
+										</li>
 									</c:otherwise>
 								</c:choose>
 						</ul>

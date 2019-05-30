@@ -120,7 +120,7 @@ public class LoginController extends HttpServlet {
 			// session에 사용자 정보를 넣어준다 ( 사용빈도가 높기때문에)
 			HttpSession session = request.getSession();
 			
-			session.setAttribute("USER_INFO", new UserVo("브라운", "brown", "곰", password));	// 세션 이름은 보통 대문자를 사용한다.
+			session.setAttribute("USER_INFO",  new UserVo("브라운", "brown", "곰", password));	// 세션 이름은 보통 대문자를 사용한다.
 			
 			
 			RequestDispatcher rd = request.getRequestDispatcher("/main.jsp");
