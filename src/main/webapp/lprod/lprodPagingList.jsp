@@ -62,46 +62,46 @@
 					  -->
 					<div class="text-center">
 						<ul class="pagination">
-							
-							
-							<%
-								// 내가 현재 몇번째 페이지에 있는가?
-								// pageVo에 저장되어있다. 
-										
-								PageVo pageVo = (PageVo)request.getAttribute("pageVo");
-								// 가져온 paginationSize를 활용해 화면에 나오는 page값을 고쳐준다.
-								if(pageVo.getPage() == 1) {%>
-								<li class="disabled">
-								<span>«</span>
-								</li>
-								<%} else{%>
-								<li>
-								<a href="${pageContext.request.contextPath}/lprodPagingList?page=<%=pageVo.getPage()-1%>&pageSize=<%= pageVo.getPageSize()%>">«</a>
-								</li>
-								<%} %>
+								<c:choose>
+									<c:when test="${pageVo.page == 1 }">
+										<li class="disabled">
+											<span>«</span>
+										</li>
+									</c:when>
+									<c:otherwise>
+										<li>
+											<a href= "${pageContext.request.contextPath }/lprodPagingList?page=${pageVo.page -1}&pageSize=${pageVo.pageSize}">«</a>
+										</li>
+									</c:otherwise>
+								</c:choose>
+								<c:forEach begin="1" end = "${paginationSize }" var="i">
+									<c:choose>
+										<c:when test="${pageVo.page == i }">
+											<li class = "active">
+												<span>${i }</span>
+											</li>
+										</c:when>												
+										<c:otherwise>
+											<li>
+												<a href="${pageContext.request.contextPath }/lprodPagingList?page=${i }&pageSize=${pageVo.pageSize }">${i }</a>
+											</li>										
+										</c:otherwise>
+									</c:choose>
+								</c:forEach>
 								
-								<%
-								int paginationSize = (Integer)request.getAttribute("paginationSize");
-								for(int i = 1; i <= paginationSize; i++){%>
-									<%if(pageVo.getPage() == i) {%>
-									<li	class = "active">										
-									  	<span><%= i %></span>
-								  	</li>
-										<%}	else{ %>
-									<li>
-										<a href="${pageContext.request.contextPath}/lprodPagingList?page=<%=i%>&pageSize=<%= pageVo.getPageSize()%>"><%=i %></a>
-									</li>										
-								<%}%>
-							<%}%>
-							<%if(pageVo.getPage() == paginationSize) {%>
-								<li class="disabled">
-								<span>»</span>
-								</li>
-								<%} else{%>
-								<li>
-								<a href="${pageContext.request.contextPath}/lprodPagingList?page=<%=pageVo.getPage()+1%>&pageSize=<%= pageVo.getPageSize()%>">»</a>
-								</li>
-								<%} %>
+								<c:choose>
+									<c:when test="${pageVo.page == paginationSize }">
+										<li class="disabled">
+											<span>»</span>
+										</li>
+									</c:when>
+									<c:otherwise>
+										<li>
+											<a href="${pageContext.request.contextPath }/lprodPagingList?page=${pageVo.page +1 }&pageSize=${pageVo.pageSize}">»</a>
+										</li>
+									</c:otherwise>
+								</c:choose>
+								
 						</ul>
 					</div>
 				</div>
