@@ -41,7 +41,7 @@
                <div class="col-sm-8 blog-main">
                   <h2 class="sub-header">사용자상세</h2>
                   
-                  <form class="form-horizontal" role="form">
+                  <form class="form-horizontal" role="form" action="${pageContext.request.contextPath }/userModify" method="get">
       				 <div class="form-group">
                            <label class="col-sm-2 control-label">사용자 사진</label>
                            <img src="${pageContext.request.contextPath }/profile?userId=${userVo.userId}"/>

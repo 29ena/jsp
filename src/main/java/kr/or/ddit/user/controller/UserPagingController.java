@@ -24,8 +24,6 @@ import kr.or.ddit.user.service.UserService;
 @WebServlet("/userPagingList")
 public class UserPagingController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
-      
 	private IuserService userService;
 	
 	@Override

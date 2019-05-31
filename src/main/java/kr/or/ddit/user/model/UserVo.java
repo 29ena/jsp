@@ -15,16 +15,24 @@ public class UserVo {
 	private String filename;
 	
 
-
-
-
-
-
 	public UserVo(String name, String userId, String alias, String pass) {
+		
 		this.name = name;
 		this.userId = userId;
 		this.alias = alias;
 		this.pass = pass;
+	}
+	
+	public UserVo(String name, String userId, String alias, String pass,
+			String addr1, String addr2, String zipcd, Date birth) {
+		this.name = name;
+		this.userId = userId;
+		this.alias = alias;
+		this.pass = pass;
+		this.addr1 = addr1;
+		this.addr2 = addr2;
+		this.zipcd = zipcd;
+		this.birth = birth;
 	}
 
 
