@@ -25,7 +25,7 @@ import org.slf4j.LoggerFactory;
  * Servlet implementation class FileUploadServlet
  */
 @WebServlet("/fileUpload")
-@MultipartConfig(maxFileSize = 1024 * 1024 * 3, maxRequestSize = 1024 * 1024)
+@MultipartConfig(maxFileSize = 1024 * 1024 * 3, maxRequestSize = 1024 * 1024 * 15)
 public class FileUploadServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
