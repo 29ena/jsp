@@ -57,36 +57,12 @@ public class FileUploadServlet extends HttpServlet {
 			String contentDisposition = part.getHeader("content-disposition");
 			String fileName = PartUtil.getFileName(contentDisposition);
 			String ext = PartUtil.getExt(fileName);
-			ext = ext.equals("") ? "" : "." + ext;
 
-			// 년도에 해당하는 폴더가 있는지, 년도안에 월에 해당하는 폴더가 있는지
-
-			Date dt = new Date();
-
-			// 년도, 월을 formatting 한다.
-			SimpleDateFormat yyyMMSdf = new SimpleDateFormat("yyyyMM");
-
-			String yyyyMM = yyyMMSdf.format(dt);
-			String yyyy = yyyyMM.substring(0,4);
-			String mm = yyyyMM.substring(4,6);
-
-			
-			// 신규년도로 넘어갔을 때 해당 년도의 폴더를 생성한다.
-			File yyyyFolder = new File("d:\\upload\\" + yyyy);
-			if (!yyyyFolder.exists()) {
-				yyyyFolder.mkdir();
-			}
-			
-			// 월에 해당하는 폴더가 있는지 확인
-			File mmFolder = new File("d:\\upload\\"+ yyyy + File.separator + mm);
-			if (!mmFolder.exists()) {
-				mmFolder.mkdir();
-			}
 			
 			// 업로드 폴더가 존재하는지 확인 후 생성
-			String uploadPath = "d:\\upload\\" + yyyy + "\\" + mm ; 
+			String uploadPath = PartUtil.getUploadPath();
 			File uploadFolder = new File(uploadPath);
-			if (uploadFolder.exists()) {
+			if (!uploadFolder.exists()) {
 				// 파일 디스크에 쓰기
 				part.write(uploadPath + "\\" + UUID.randomUUID().toString() + ext);
 				part.delete(); // 디스크 임시 공간에 저장된 파일이 있다면 삭제한다.

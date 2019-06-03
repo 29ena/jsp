@@ -100,7 +100,7 @@
 										</li>
 									</c:when>
 									<c:otherwise>
-										<li>>
+										<li>
 											<a href="${pageContext.request.contextPath}/userPagingList?page=${pageVo.page -1 }&pageSize=${pageVo.pageSize}" >«</a>
 										</li>
 									</c:otherwise>

@@ -42,7 +42,7 @@
     <insert id="insertUser" parameterType="userVo">
     insert into users
 	values(#{userId},#{name},#{alias},#{pass},#{addr1}
-   		 ,#{addr2}, #{zipcd}, #{birth},'','')
+   		 ,#{addr2}, #{zipcd}, #{birth},#{path, jdbcType=VARCHAR},#{filename, jdbcType=VARCHAR})
 	</insert>
 	
 	<!-- 사용자삭제 -->
@@ -61,6 +61,8 @@
 	     , addr2 = #{addr2}
 	     , zipcd = #{zipcd}
 	     , birth = #{birth}
+     	 , path = #{path}
+     	 , filename = #{filename}
 	where userid = #{userId}
 	</update>
 	 
