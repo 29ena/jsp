@@ -82,8 +82,8 @@ public class UserService implements IuserService {
 		return userDao.updateUser(userVo);
 	}
 
-	/*
-	*//**
+	
+	/**
 	 * 
 	* Method : encryptPassAllUser
 	* 작성자 : PC20
@@ -91,7 +91,7 @@ public class UserService implements IuserService {
 	* @return
 	* Method 설명 : 사용자 비밀번호 암호화 일괄 적용 배치
 	* 			 : 재적용 하질 말것 !!!!
-	 *//*
+	 */
 	@Override
 	public int encryptPassAllUser() {
 		// 사용하지 마세요!!! 이미 암호화 적용 되었습니다
@@ -126,6 +126,4 @@ public class UserService implements IuserService {
 		logger.debug("updataCnt : {}", updateCnt);
 	}
 	
-	
-	*/
 }
