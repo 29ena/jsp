@@ -96,51 +96,84 @@ public class UserDao implements IuserDao {
 		sqlSession.close();
 		return usersCnt;
 	}
+
 	/**
 	 * 
-	* Method : insertUser
-	* 작성자 : PC20
-	* 변경이력 :
-	* @param userVo
-	* @return
-	* Method 설명 : 사용자 등록
+	 * Method : insertUser 작성자 : PC20 변경이력 :
+	 * 
+	 * @param userVo
+	 * @return Method 설명 : 사용자 등록
 	 */
 	@Override
 	public int insertUser(UserVo userVo) {
 		SqlSession sqlSession = MyBatisUtil.getSqlSession();
-		int insertCnt = sqlSession.insert("user.insertUser",userVo);
+		int insertCnt = sqlSession.insert("user.insertUser", userVo);
 		sqlSession.commit();
 		sqlSession.close();
 		return insertCnt;
 	}
-	
+
 	/**
 	 * 
-	* Method : deleteUser
-	* 작성자 : PC20
-	* 변경이력 :
-	* @param userId
-	* @return
-	* Method 설명 : 사용자 삭제
+	 * Method : deleteUser 작성자 : PC20 변경이력 :
+	 * 
+	 * @param userId
+	 * @return Method 설명 : 사용자 삭제
 	 */
 	@Override
 	public int deleteUser(String userId) {
 		SqlSession sqlSession = MyBatisUtil.getSqlSession();
-		int deleteCnt = sqlSession.delete("user.deleteUser",userId);
+		int deleteCnt = sqlSession.delete("user.deleteUser", userId);
 		sqlSession.commit();
 		sqlSession.close();
 		return deleteCnt;
 	}
 
+	/**
+	 * 
+	* Method : updateUser
+	* 작성자 : PC20
+	* 변경이력 :
+	* @param userVo
+	* @return
+	* Method 설명 : 비밀번호 암호화 적용 대상 자용자 전체 저회
+	 */
 	@Override
 	public int updateUser(UserVo userVo) {
 		SqlSession sqlSession = MyBatisUtil.getSqlSession();
-		int updateCnt = sqlSession.update("user.updateUser",userVo);
+		int updateCnt = sqlSession.update("user.updateUser", userVo);
 		sqlSession.commit();
 		sqlSession.close();
 		return updateCnt;
-		
+
+	}
+	/**
+	 * 
+	* Method : userListForPassEncrypt
+	* 작성자 : PC20
+	* 변경이력 :
+	* @param sqlSession
+	* @return
+	* Method 설명 : 비밀번호 암호화 젹용대상 사용자 전체 조회
+	 */
+	@Override
+	public List<UserVo> userListForPassEncrypt(SqlSession sqlSession) {
+		return sqlSession.selectList("user.userListForPassEncrypt");
+	}
+	
+	/**
+	 * 
+	* Method : updateUserEncryptPass
+	* 작성자 : PC20
+	* 변경이력 :
+	* @param sqlSession
+	* @param userVo
+	* @return
+	* Method 설명 : 사용자 비밀번호 암호화 적용
+	 */
+	@Override
+	public int updateUserEncryptPass(SqlSession sqlSession, UserVo userVo) {
+		return sqlSession.update("user.updateUserEncryptPass", userVo);
 	}
 
-	
 }
