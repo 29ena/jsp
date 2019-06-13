@@ -56,16 +56,7 @@
 	   
    });
    
-function dataInit(){
-	$("#userId").val("userTest");
-	$("#name").val("대덕인");
-	$("#alias").val("중앙로");
-	$("#addr1").val("대전광역시 중구 중앙로 76");
-	$("#addr2").val("영민빌딩 2층 204호");
-	$("#zipcd").val("34940");
-	$("#birth").val("2019-05-31");
-	$("#pass").val("1234");
-}
+
 </script>
 </head>
 
@@ -166,6 +157,7 @@ function dataInit(){
                      
                      <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
+                          
                            <button  id="userRegBtn" type="button" class="btn btn-default">사용자 등록</button>
                         </div>
                      </div>

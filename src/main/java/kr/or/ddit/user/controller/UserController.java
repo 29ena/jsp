@@ -48,7 +48,7 @@ public class UserController extends HttpServlet {
 		logger.debug("userVo : {}",userVo);
 		
 		// 화면을 담당하는 /user/user.jsp로 forward
-		request.getRequestDispatcher("/user/user.jsp").forward(request, response);;
+		request.getRequestDispatcher("/user/user.jsp").forward(request, response);
 	}
 	
 	

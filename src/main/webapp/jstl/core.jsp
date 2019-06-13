@@ -1,3 +1,5 @@
+<%@page import="java.util.HashMap"%>
+<%@page import="java.util.Map"%>
 <%@page import="kr.or.ddit.paging.model.PageVo"%>
 <%@page import="kr.or.ddit.user.model.UserVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -69,7 +71,26 @@
 		${i } <br>
 	</c:forEach>
 	
-	
+	<h2>foreach map</h2>
+	<%
+		
+		Map<String, String> dataMap = new HashMap<String, String>();
+		// name, age, hp 입력
+		dataMap.put("name", "brown");
+		dataMap.put("age", "8");
+		dataMap.put("hp", "010-8888-8888");
+		
+		// 출력 방법 1
+		for(String key : dataMap.keySet())
+			out.write(dataMap.get(key)+"<br>");
+		// 출력 방법 2
+		request.setAttribute("dataMap", dataMap);
+	%>
+		================================================<br>
+				
+		<c:forEach items = "${dataMap }" var="data">
+			${data.key } / ${data.value } <br>
+		</c:forEach>
 		
 </body>
 </html>
