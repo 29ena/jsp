@@ -1,22 +1,27 @@
-<%@tag import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
-<%@tag import="kr.or.ddit.prod.dao.ProdDao"%>
 <%@tag import="kr.or.ddit.prod.dao.IProdDao"%>
+<%@tag import="kr.or.ddit.prod.dao.ProdDao"%>
 <%@ tag language="java" pageEncoding="UTF-8"%>
-<%@ tag import="java.sql.DriverManager" %>
-<%@ tag import="java.sql.Connection" %>
-<%@ tag import="java.sql.ResultSet" %>
-<%@ tag import="java.sql.PreparedStatement" %>
-<%@ attribute name = "code" required="true" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ attribute name="code" required="true"%>
 
-code : ${code } <br>
-<% 
-	String code = (String)jspContext.getAttribute("code");
+<%	
 	IProdDao prodDao = new ProdDao();
 	jspContext.setAttribute("prodList", prodDao.prodList(code));
 %>
+<select>
+	<c:forEach items="${prodList }" var="prod">
+		<option value="${prod.prod_id }">${prod.prod_name }</option>
+	</c:forEach>
+</select>
 
 
- 
+
+
+
+
+
+
+
 
 
 
