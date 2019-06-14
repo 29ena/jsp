@@ -61,7 +61,7 @@
 				<div class="col-sm-8 blog-main">
 					<h2 class="sub-header">사용자</h2>
 					<!-- 사용자 상세조회 : userId가 필요 -->
-					<form id="frm" action="${pageContext.request.contextPath }/user" method="get">
+					<form id="frm" action="${cp }/user" method="get">
 						<input type="hidden" id="userId" name="userId"/>
 					</form>
 					<div class="table-responsive">
@@ -84,7 +84,7 @@
 						</table>
 					</div>
 
-					<a href="${pageContext.request.contextPath }/userForm" class="btn btn-default pull-right">사용자 등록</a>
+					<a href="${cp }/userForm" class="btn btn-default pull-right">사용자 등록</a>
 					<!-- 사용자 수 : 105건
 						  페이지네이션 : 11건
 					  -->
@@ -101,7 +101,7 @@
 									</c:when>
 									<c:otherwise>
 										<li>
-											<a href="${pageContext.request.contextPath}/userPagingList?page=${pageVo.page -1 }&pageSize=${pageVo.pageSize}" >«</a>
+											<a href="${cp}/userPagingList?page=${pageVo.page -1 }&pageSize=${pageVo.pageSize}" >«</a>
 										</li>
 									</c:otherwise>
 								</c:choose>
@@ -114,7 +114,7 @@
 										</c:when>
 										<c:otherwise>
 											<li>
-											<a href="${pageContext.request.contextPath}/userPagingList?page=${i }&pageSize=${pageVo.pageSize}">${i }</a>
+											<a href="${cp}/userPagingList?page=${i }&pageSize=${pageVo.pageSize}">${i }</a>
 											</li>
 										</c:otherwise>
 									</c:choose>
@@ -128,7 +128,7 @@
 									</c:when>
 									<c:otherwise>
 										<li>
-											<a href="${pageContext.request.contextPath}/userPagingList?page=${pageVo.page +1 }&pageSize=${pageVo.pageSize}">»</a>
+											<a href="${cp}/userPagingList?page=${pageVo.page +1 }&pageSize=${pageVo.pageSize}">»</a>
 										</li>
 									</c:otherwise>
 								</c:choose>

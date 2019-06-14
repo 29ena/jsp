@@ -60,7 +60,6 @@ public class UserModifyController extends HttpServlet {
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8"); // 설정하지 않으면 한글깨짐
 		
 		// 사용자 보낸 파라미터를 사용해서 UserVo 인스턴스를 만들어서
 		String userId = request.getParameter("userId");

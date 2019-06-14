@@ -77,7 +77,7 @@
                   <h2 class="sub-header">사용자수정</h2>
                   
                   <form id= "frm" class="form-horizontal" role="form"
-                  		action="${pageContext.request.contextPath }/userModify"
+                  		action="${cp }/userModify"
                   		method="post"
                   		enctype="multipart/form-data">
       				 <div class="form-group">

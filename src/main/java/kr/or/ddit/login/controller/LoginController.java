@@ -55,6 +55,7 @@ public class LoginController extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		logger.debug("LoginController doGet()"); // 정상적으로 이 메서드가 실행되는지 까지 확인하는
 													// 부분
+		logger.debug("parameter UNT_CD : {}", request.getParameter("UNT_CD"));
 		
 		if(request.getCookies() != null){
 			for(Cookie cookie : request.getCookies()){
@@ -84,7 +85,8 @@ public class LoginController extends HttpServlet {
 	// 사용자 로그인 요청 처리
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		
+		logger.debug("parameter UNT_CD : {}", request.getParameter("UNT_CD"));
+			
 		
 		// 사용자 파라미터 userId, password
 		String userId = request.getParameter("userId");
@@ -118,7 +120,7 @@ public class LoginController extends HttpServlet {
 			// session에 사용자 정보를 넣어준다 ( 사용빈도가 높기때문에)
 			HttpSession session = request.getSession();
 			
-			session.setAttribute("USER_INFO",  new UserVo("브라운", "brown", "곰", password));	// 세션 이름은 보통 대문자를 사용한다.
+			session.setAttribute("USER_INFO",userVo );	// 세션 이름은 보통 대문자를 사용한다.
 			
 			
 			RequestDispatcher rd = request.getRequestDispatcher("/main.jsp");
