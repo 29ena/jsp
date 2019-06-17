@@ -98,7 +98,7 @@ userService, userDao getUser 테스트 코드 작성
 사용자 페이지 리스트 조회 쿼리 작성"
 </pre>
 
-## 2019.05.27
+## :grin: 2019.05.27
 <pre>
 사용자 리스트 조회 mvc 복습(학생 실습)
 "사용자 리스트 조회 mvc 복습(학생 실습)
@@ -116,7 +116,7 @@ pagination  처리 (pagination 화면 출력, li active class 추가)
 pagination  처리 (pagination 화면 출력, li active class 추가, 이전 페이지, 다음 페이지 가기 버튼)
 </pre>
 
-## 2019.05.28
+## :grin: 2019.05.28
 <pre>
 "github 연동 설정 (학생실습)
 웹 프로그래밍 흐름 파악(학생실습-주석달기)
@@ -133,7 +133,7 @@ remember me cookie 적용(server side)
 jdbc 컨넥션, dbcp 컨넥션
 </pre>
 
-## 2019.05.29
+## :grin: 2019.05.29
 <pre>
 쿠키를 사용한 자동 로그인 기능 개발(학생실습)
 "쿠키를 사용한 자동 로그인 기능 개발(학생실습)
@@ -151,7 +151,7 @@ jstl core set, if"
 jstl core if, forEach
 </pre>
 
-## 2019.05.30
+## :grin: 2019.05.30
 <pre>
 "사용자 로그인 프로세스 개선(mock 데이터 -> db 데이터) 학생실습
 
@@ -172,7 +172,7 @@ maven cycle
 사용자 사진 조회 servlet 개발"
 </pre>
 
-## 2019.05.31
+## :grin: 2019.05.31
 <pre>
 timeTables.jsp jstl, el 전환 -> timesTablesJstl.jsp (학생실습)
 "날짜 사이 간격 평균 구하기 쿼리(학생실습)
@@ -187,7 +187,7 @@ timeTables.jsp jstl, el 전환 -> timesTablesJstl.jsp (학생실습)
 사용자 수정 개발(dao, service, controller)(학생실습)
 </pre>
 
-## 2019.06.03
+## :grin: 2019.06.03
 <pre>
 "웹 프로그래밍 개념 정리 하기(학생  정리 - 중요개념 7가지 뽑아보기)
 암호화
@@ -206,12 +206,12 @@ smart editor 사용방법 진행"
 게시판 실습
 </pre>
 
-## 2019.06.04 ~ 2019.06.11
+## :grin: 2019.06.04 ~ 2019.06.11
 <pre>
 게시판 실습
 </pre>
 
-## 2019.06.12
+## :grin: 2019.06.12
 <pre>
 게시판 실습
 "게시판 과제 리뷰(박영춘 작성 소스코드)
@@ -220,7 +220,7 @@ vm 오라클 설치"
 jstl 국제화"
 </pre>
 
-## 2019.06.13
+## :grin: 2019.06.13
 <pre>
 jstl 국제화(fmt) - bundle, setBundle, message, param
 "jstl 국제화(number) - formatNumber, parseNumber
@@ -253,7 +253,7 @@ mvc 패턴"
 mvc 패턴 - front controller
 </pre>
 
-## 2019.06.17
+## :grin: 2019.06.17
 <pre>
 mvc 패턴 - front controller, RequetMapping, ViewResolver
 mvc 패턴 - RequetMapping - db 연동(DbDao)
