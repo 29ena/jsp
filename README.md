@@ -1,5 +1,5 @@
 # JSP & Servlet Learn
-# :grin: JSP 개념
+# :monocle: JSP 개념
 JSP (JavaServer Pages ) 란 무엇인가?
 <br>
 <pre>
@@ -11,7 +11,7 @@ HTML과 JSP태그(스크립트릿)로 구성되어 화면을 작성하는 데 �
 JSP에서는 자바를 사용하고 있다. 즉 , JSP에서는 자바언어로 로직(프로그램)을 구현한다.
 </pre>
 
-# :grin: Servlet 개념
+# :monocle: Servlet 개념
 <pre>
 웹프로그래밍에서 클라이언트의 요청을 처리하고 그 결과를 다시 클라이언트에게 
 전송하는 Servlet 클래스의 구현 규칙을 지킨 자바 프로그래밍 기술
