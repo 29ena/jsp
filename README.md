@@ -37,19 +37,19 @@ HTML 변경 시 Servlet을 재컴파일해야 하는 단점이 있다.
 
 ## 2019.05.21
 <pre>
-- "maven 프로젝트, 기본 서블릿 생성 실습(학생실습)
-- git"
-- "git 설치
-- git 명령어 (git init, git status, git add, git commit, git remote, git push)"
-- git 충돌시나리오 (gitTest, gitOther)
-- git eclipse plugin 사용 방법
-- "git eclipse clone
-- logback 설정, 사용방법"
-- "logback 설정, 사용방법
-- jsp 기본 개념 (page 지시어, 스크립틀릿, 표현식, 주석)
-- jsp timesTables 실습(학생실습)"
-- "jsp timesTables 실습(학생실습)
-- jsp factorial 실습(학생실습)"
-- jsp 내장객체 (HttpServletRequest)
+:white_square_button:"maven 프로젝트, 기본 서블릿 생성 실습(학생실습)
+:white_square_button:git"
+:white_square_button:"git 설치
+:white_square_button:git 명령어 (git init, git status, git add, git commit, git remote, git push)"
+:white_square_button:git 충돌시나리오 (gitTest, gitOther)
+:white_square_button:git eclipse plugin 사용 방법
+:white_square_button:"git eclipse clone
+:white_square_button:logback 설정, 사용방법"
+:white_square_button:"logback 설정, 사용방법
+:white_square_button:jsp 기본 개념 (page 지시어, 스크립틀릿, 표현식, 주석)
+:white_square_button:jsp timesTables 실습(학생실습)"
+:white_square_button:"jsp timesTables 실습(학생실습)
+:white_square_button:jsp factorial 실습(학생실습)"
+:white_square_button:jsp 내장객체 (HttpServletRequest)
 <pre>
 
