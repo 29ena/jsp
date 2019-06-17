@@ -1,36 +1,12 @@
 # JSP & Servlet Learn
-##JSP 기초
-***
-- url 테스트
-- __Servlet__ -> __JSP__ 변환
-- __request__ 객체 정보 확인
-- __login__ 로직 개발
-- login화면 __bootstrap__ 적용
-- JSP를 이용한 파일다운로드 응답
-- Login 처리 프로세스 수정
-- __url mapping__ 테스트
-- __ JSP 내장객체__
 
-- __Login__ 프로스세스 개선
-- __MyBatis__ 환경설정
-- __JUnit__을 이용한 단위 테스트 적용
-- 사용자 페이징 리스트 개발
-- __error page__설정
-- __cookie__를 이용한 remember me 적용
-- __JDBC__ Connection
-- dbcp connection pooling 개선
-- __el__ / __jstl__
-- maven compiler plugin
-- 사용자 상세조회 페이지 개발
-- 파일 업로드 기능 구현 
-- birth date 필드 포맷팅 관련 예제 
-- 암호화 알고리즘 적용
-- 암호화 모듈 적용
-- __jstl__ forEach-map, import, etc(redirect, rul, out, catch)
-***
-+실습
-- JSP 선언부 실습
-- scope실습
-- 문자열 계산기 테스트 주도 개발
-- 게시판 연습
-- code.tag(dao 사용) 
+#Servlet 개념
+웹프로그래밍에서 클라이언트의 요청을 처리하고 그 결과를 다시 클라이언트에게 
+전송하는 Servlet 클래스의 구현 규칙을 지킨 자바 프로그래밍 기술
+<br>
+클라이언트의 요청에 대해 동적으로 작동하는 웹 어플리케이션 컴포넌트
+html을 사용하여 요청에 응답한다.
+Java Thread를 이용하여 동작한다.
+MVC 패턴에서 Controller로 이용된다.
+HTTP 프로토콜 서비스를 지원하는 javax.servlet.http.HttpServlet 클래스를 상속받는다. UDP보다 속도가 느리다.
+HTML 변경 시 Servlet을 재컴파일해야 하는 단점이 있다.
