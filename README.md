@@ -23,7 +23,7 @@ MVC 패턴에서 Controller로 이용된다.
 HTTP 프로토콜 서비스를 지원하는 javax.servlet.http.HttpServlet 클래스를 상속받는다. UDP보다 속도가 느리다.
 HTML 변경 시 Servlet을 재컴파일해야 하는 단점이 있다.
 </pre>
-## 2019.05.20
+## :grin: 2019.05.20
 <pre>
 * BasicServlet 클래스 생성, servlet mapping 등록(web.xml)
 * "BasicServlet 클래스 생성, servlet mapping 등록(web.xml)
@@ -35,7 +35,7 @@ HTML 변경 시 Servlet을 재컴파일해야 하는 단점이 있다.
 * timesServlet request Parameter 적용(학생실습)
 </pre>
 
-## 2019.05.21
+## :grin: 2019.05.21
 <pre>
 *  "maven 프로젝트, 기본 서블릿 생성 실습(학생실습)git"
 * "git 설치git 명령어 (git init, git status, git add, git commit, git remote, git push)"
@@ -51,7 +51,7 @@ HTML 변경 시 Servlet을 재컴파일해야 하는 단점이 있다.
 * jsp 내장객체 (HttpServletRequest)
 <pre>
 
-## 2019.05.22
+## :grin: 2019.05.22
 <pre>
 * "전시간 복습 - helloWord servlet, helloWorld jsp
 * timesTables.jsp 파라미터 적용(학생실습)"
@@ -73,7 +73,7 @@ HTML 변경 시 Servlet을 재컴파일해야 하는 단점이 있다.
 * 약간의 쉬는시간"
 </pre>
 
-## 2019.05.23
+## :grin: 2019.05.23
 <pre>
 "로그인 프로세스 복습(학생 실습)
  ( scope-세션 개념 포함)"
