@@ -49,7 +49,7 @@ HTML 변경 시 Servlet을 재컴파일해야 하는 단점이 있다.
 * "jsp timesTables 실습(학생실습)
 * jsp factorial 실습(학생실습)"
 * jsp 내장객체 (HttpServletRequest)
-<pre>
+</pre>
 
 ## :grin: 2019.05.22
 <pre>
@@ -204,7 +204,7 @@ smart editor 사용방법 진행"
 "smart editor 사용방법 진행
 게시판 실습 시작"
 게시판 실습
-<pre>
+</pre>
 
 ## 2019.06.04 ~ 2019.06.11
 <pre>
