@@ -1,6 +1,7 @@
 package kr.or.ddit.user.service;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -10,7 +11,6 @@ import java.util.Map;
 import kr.or.ddit.paging.model.PageVo;
 import kr.or.ddit.user.model.UserVo;
 
-import org.apache.ibatis.annotations.ResultMap;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

@@ -27,7 +27,7 @@
 			</dataSource>
 		</environment>
 	</environments>
-	<mappers>
+	<mappers> 
 		<mapper resource="kr/or/ddit/config/mybatis/mapper/user.xml" />
 		<mapper resource="kr/or/ddit/config/mybatis/mapper/lprod.xml" />
 		<mapper resource="kr/or/ddit/config/mybatis/mapper/prod.xml" />
